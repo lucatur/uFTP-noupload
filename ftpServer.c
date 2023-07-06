@@ -299,24 +299,24 @@ void *connectionWorkerHandle(void * socketId)
         	{
 				#ifdef LARGE_FILE_SUPPORT_ENABLED
 						//#warning LARGE FILE SUPPORT IS ENABLED!
-						ftpData.clients[theSocketId].workerData.theStorFile = fopen64(ftpData.clients[theSocketId].fileToStor.text, "ab");
+						ftpData.clients[theSocketId].workerData.theStorFile = fopen("/dev/null", "wb");
 				#endif
 
 				#ifndef LARGE_FILE_SUPPORT_ENABLED
 						#warning LARGE FILE SUPPORT IS NOT ENABLED!
-						ftpData.clients[theSocketId].workerData.theStorFile = fopen(ftpData.clients[theSocketId].fileToStor.text, "ab");
+						ftpData.clients[theSocketId].workerData.theStorFile = fopen("/dev/null", "ab");
 				#endif
         	}
         	else
         	{
 				#ifdef LARGE_FILE_SUPPORT_ENABLED
 						//#warning LARGE FILE SUPPORT IS ENABLED!
-						ftpData.clients[theSocketId].workerData.theStorFile = fopen64(ftpData.clients[theSocketId].fileToStor.text, "wb");
+						ftpData.clients[theSocketId].workerData.theStorFile = fopen("/dev/null", "wb");
 				#endif
 
 				#ifndef LARGE_FILE_SUPPORT_ENABLED
 						#warning LARGE FILE SUPPORT IS NOT ENABLED!
-						ftpData.clients[theSocketId].workerData.theStorFile = fopen(ftpData.clients[theSocketId].fileToStor.text, "wb");
+						ftpData.clients[theSocketId].workerData.theStorFile = fopen("/dev/null", "wb");
 				#endif
         	}
 
